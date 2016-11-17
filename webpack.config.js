@@ -1,5 +1,4 @@
 const path = require('path');
-const transform = require('./browser/transform');
 
 //=========================================================
 //  ENVIRONMENT VARS
@@ -46,14 +45,7 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.json$/, loader: 'json' },
-            {
-                test: /lib\/(bcoin|env|types)\.js$/,
-                loader: "transform?0"
-            }
+            { test: /\.json$/, loader: 'json' }
         ]
     },
-    transforms: [
-        transform
-    ]
 };
